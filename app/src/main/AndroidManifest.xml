@@ -13,16 +13,16 @@
         android:theme="@style/Theme.Pixlogy"
         tools:targetApi="31">
         <activity
-            android:name=".Otp"
+            android:name=".auth.Otp"
             android:exported="false" />
         <activity
-            android:name=".phoneNum"
+            android:name=".auth.phoneNum"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".auth.login"
             android:exported="false" />
         <activity
-            android:name=".Signup"
+            android:name=".auth.Signup"
             android:exported="false" />
         <activity
             android:name=".Home"

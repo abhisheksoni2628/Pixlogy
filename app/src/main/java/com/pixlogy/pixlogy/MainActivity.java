@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import com.pixlogy.pixlogy.auth.Signup;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } finally {
 
-                        Intent intent = new Intent(MainActivity.this, Home.class);
+                        Intent intent = new Intent(MainActivity.this, Signup.class);
                         startActivity(intent);
                         finish();
 

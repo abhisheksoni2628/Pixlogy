@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "94810385169",
+    "project_id": "pixlogy-2e991",
+    "storage_bucket": "pixlogy-2e991.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94810385169:android:04830a0182f6c2701a7ab0",
+        "android_client_info": {
+          "package_name": "com.pixlogy.pixlogy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94810385169-mt6tnm255i96mdcbfvhckhqma1uiuomp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKcNo_onsrOYE5rcQ-LBa76UocrrJvaR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94810385169-mt6tnm255i96mdcbfvhckhqma1uiuomp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
