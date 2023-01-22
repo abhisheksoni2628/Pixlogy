@@ -19,7 +19,7 @@
             android:name=".auth.phoneNum"
             android:exported="false" />
         <activity
-            android:name=".auth.login"
+            android:name=".auth.Login"
             android:exported="false" />
         <activity
             android:name=".auth.Signup"

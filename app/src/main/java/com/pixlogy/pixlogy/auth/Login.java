@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.pixlogy.pixlogy.R;
 
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
