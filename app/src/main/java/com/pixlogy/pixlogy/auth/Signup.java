@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -35,8 +36,8 @@ public class Signup extends AppCompatActivity {
     RelativeLayout progresslayout;
 
     TextView loginText;
-    private Object signInRequest;
-    private  static  final  int RC_SIGN_IN = 123 ;
+
+    private  static  final  int RC_SIGN_IN = 100 ;
     private GoogleSignInClient mGoogleSignInClient;
     EditText username;
     EditText email;
@@ -91,6 +92,8 @@ public class Signup extends AppCompatActivity {
 
 
     }
+
+
     private void requestGoogleSignin() {
         GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -143,31 +146,13 @@ public class Signup extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-
                         Toast.makeText(Signup.this, "SignUp Successfull", Toast.LENGTH_SHORT).show();
-                        progresslayout.setVisibility(VISIBLE);
-            Thread th = new Thread() {
 
-                @Override
-                public void run() {
-
-                    try {
-                        sleep(2000);
-
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-
-                    } finally {
-                        Intent intent = new Intent( Signup.this , Login.class);
+                        Intent intent = new Intent(Signup.this, Login.class);
                         startActivity(intent);
-                        finish();
-                    }
-
-                }
-            };
 
 
-            th.start();
+
 
                     }else{
                         Toast.makeText(Signup.this, "Sing Up error ", Toast.LENGTH_SHORT).show();
