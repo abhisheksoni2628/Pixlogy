@@ -103,7 +103,7 @@
                 android:background="@drawable/edit_text_styling"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="numberPassword"
+                android:inputType="textPassword"
                 android:longClickable="false"
                 android:maxLines="1"
                 android:textColor="#050505"
@@ -147,6 +147,7 @@
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_gravity="center"
