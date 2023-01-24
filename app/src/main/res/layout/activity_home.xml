@@ -49,10 +49,22 @@
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/ocrScannerBtn"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/home_activity_layouts">
@@ -96,7 +108,7 @@
         android:id="@+id/imgStegnographyBtn"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/home_activity_layouts">
@@ -137,29 +149,30 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/ocrScannerBtn"
+        android:id="@+id/lens_Scan_searchBtn"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/home_activity_layouts">
 
         <ImageView
-            android:id="@+id/ocrimg"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:id="@+id/lens"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
-            android:src="@drawable/ocr_scan" />
+            android:src="@drawable/lens" />
 
         <TextView
-            android:id="@+id/ocrText"
+            android:id="@+id/lensText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/ocrimg"
+            android:layout_toEndOf="@+id/lens"
             android:fontFamily="@font/doppio_one"
-            android:text="OCR Scanner"
+            android:text="Scan &amp; Search"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:layout_marginStart="15dp"
@@ -169,40 +182,85 @@
         <TextView
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ocrText"
+            android:layout_below="@+id/lensText"
             android:layout_marginStart="15dp"
-            android:layout_toEndOf="@+id/ocrimg"
+            android:layout_toEndOf="@+id/lens"
             android:fontFamily="@font/doppio_one"
-            android:text="Search and Extract texts from images with OCR"
+            android:text="Scan any image and search about it on web"
             android:textColor="@color/black"
             android:textSize="10dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/ocrScannerBtn"
+        android:id="@+id/qrCodeReaderBtn"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/home_activity_layouts">
 
         <ImageView
-            android:id="@+id/ocrimg"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:id="@+id/qrimg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
-            android:src="@drawable/ocr_scan" />
+            android:src="@drawable/qr_scan" />
 
         <TextView
-            android:id="@+id/ocrText"
+            android:id="@+id/qrText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/ocrimg"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@+id/qrimg"
             android:fontFamily="@font/doppio_one"
-            android:text="OCR Scanner"
+            android:text="Barcode/QR Code Reader"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <!--        <TextView-->
+<!--            android:layout_width="230dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/qrText"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_toEndOf="@+id/qrimg"-->
+<!--            android:fontFamily="@font/doppio_one"-->
+<!--            android:text="Search and Extract texts from images with OCR"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="10dp" />-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/imageCompressorBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/home_activity_layouts">
+
+        <ImageView
+            android:id="@+id/compressImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/img_compress" />
+
+        <TextView
+            android:id="@+id/compressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/compressImg"
+            android:fontFamily="@font/doppio_one"
+            android:text="Image Compressor"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:layout_marginStart="15dp"
@@ -212,40 +270,41 @@
         <TextView
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ocrText"
+            android:layout_below="@+id/compressText"
             android:layout_marginStart="15dp"
-            android:layout_toEndOf="@+id/ocrimg"
+            android:layout_toEndOf="@+id/compressImg"
             android:fontFamily="@font/doppio_one"
-            android:text="Search and Extract texts from images with OCR"
+            android:text="You can reduce the size of any image according to your preferences"
             android:textColor="@color/black"
             android:textSize="10dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/ocrScannerBtn"
+        android:id="@+id/imgToPdfBtn"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/home_activity_layouts">
 
         <ImageView
-            android:id="@+id/ocrimg"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:id="@+id/pdfimg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
-            android:src="@drawable/ocr_scan" />
+            android:src="@drawable/img_to_pdf" />
 
         <TextView
-            android:id="@+id/ocrText"
+            android:id="@+id/pdftext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/ocrimg"
+            android:layout_toEndOf="@+id/pdfimg"
             android:fontFamily="@font/doppio_one"
-            android:text="OCR Scanner"
+            android:text="PDF Convertor"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:layout_marginStart="15dp"
@@ -255,58 +314,18 @@
         <TextView
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ocrText"
+            android:layout_below="@+id/pdftext"
             android:layout_marginStart="15dp"
-            android:layout_toEndOf="@+id/ocrimg"
+            android:layout_toEndOf="@+id/pdfimg"
             android:fontFamily="@font/doppio_one"
-            android:text="Search and Extract texts from images with OCR"
+            android:text="Organize your images and reduce their size by converting them to PDF files"
             android:textColor="@color/black"
             android:textSize="10dp" />
 
     </RelativeLayout>
+        </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/ocrScannerBtn"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/home_activity_layouts">
-
-        <ImageView
-            android:id="@+id/ocrimg"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/ocr_scan" />
-
-        <TextView
-            android:id="@+id/ocrText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/ocrimg"
-            android:fontFamily="@font/doppio_one"
-            android:text="OCR Scanner"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ocrText"
-            android:layout_marginStart="15dp"
-            android:layout_toEndOf="@+id/ocrimg"
-            android:fontFamily="@font/doppio_one"
-            android:text="Search and Extract texts from images with OCR"
-            android:textColor="@color/black"
-            android:textSize="10dp" />
-
-    </RelativeLayout>
+    </ScrollView>
 
 
 </LinearLayout>
