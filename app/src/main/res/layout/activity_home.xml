@@ -1,116 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/theme"
+    android:orientation="vertical"
     tools:context=".Home">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center">
-
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:text="PIXLOGY"
-            android:textAlignment="center"
-            android:textSize="26sp" />
+            android:layout_height="60dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/gname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/doppio_one"
+                android:textStyle="bold"
+                tools:text="PIXLOGY"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <ImageView
+                android:id="@+id/profileBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile_btn"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"/>
 
 
-    </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
+
+
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        android:id="@+id/ocrScannerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/home_activity_layouts">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ocr_cv"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_alignParentStart="true"
+        <ImageView
+            android:id="@+id/ocrimg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_column="1"
-            app:layout_columnWeight="1" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ocr_scan" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/stignography_cv"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+        <TextView
+            android:id="@+id/ocrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="OCR Scanner"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ocrText"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="Search and Extract texts from images with OCR"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/imgStegnographyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/home_activity_layouts">
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_column="1"
-            app:layout_columnWeight="1" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/barcode_cv"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_column="1"
-            app:layout_columnWeight="1" />
+            android:layout_marginStart="10dp"
+            android:src="@drawable/stegnography" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/lens_cv"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/img2"
+            android:fontFamily="@font/doppio_one"
+            android:text="Image Stegnography"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text2"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/img2"
+            android:fontFamily="@font/doppio_one"
+            android:text="Encrypt or Decrypt any private text information inside an image"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ocrScannerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/home_activity_layouts">
+
+        <ImageView
+            android:id="@+id/ocrimg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_column="1"
-            app:layout_columnWeight="1" />
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ocr_scan" />
 
+        <TextView
+            android:id="@+id/ocrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="OCR Scanner"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ocrText"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="Search and Extract texts from images with OCR"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ocrScannerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/home_activity_layouts">
+
+        <ImageView
+            android:id="@+id/ocrimg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ocr_scan" />
+
+        <TextView
+            android:id="@+id/ocrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="OCR Scanner"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ocrText"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="Search and Extract texts from images with OCR"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ocrScannerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/home_activity_layouts">
+
+        <ImageView
+            android:id="@+id/ocrimg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ocr_scan" />
+
+        <TextView
+            android:id="@+id/ocrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="OCR Scanner"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ocrText"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="Search and Extract texts from images with OCR"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ocrScannerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/home_activity_layouts">
+
+        <ImageView
+            android:id="@+id/ocrimg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ocr_scan" />
+
+        <TextView
+            android:id="@+id/ocrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="OCR Scanner"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ocrText"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/ocrimg"
+            android:fontFamily="@font/doppio_one"
+            android:text="Search and Extract texts from images with OCR"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
 
     </RelativeLayout>
 
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
