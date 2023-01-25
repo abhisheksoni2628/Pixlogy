@@ -332,12 +332,13 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/signout"
-                android:layout_width="374dp"
+                android:layout_width="match_parent"
                 android:layout_height="55dp"
 
                 android:layout_marginTop="40dp"
                 android:backgroundTint="@color/theme2"
                 android:text="sign out"
+                android:layout_marginHorizontal="40dp"
                 android:textColor="@color/white"
                 app:cornerRadius="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
