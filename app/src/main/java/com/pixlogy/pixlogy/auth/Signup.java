@@ -1,7 +1,7 @@
 package com.pixlogy.pixlogy.auth;
 
 import static android.view.View.OnClickListener;
-import static android.view.View.VISIBLE;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -185,6 +185,7 @@ public class Signup extends AppCompatActivity {
 
 
             } catch (ApiException e) {
+                e.printStackTrace();
 
             }
         }
