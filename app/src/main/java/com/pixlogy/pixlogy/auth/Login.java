@@ -69,6 +69,13 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        requestGoogleSignin();
+        LoginWithGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

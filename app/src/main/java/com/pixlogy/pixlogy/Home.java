@@ -34,6 +34,8 @@ public class Home extends AppCompatActivity {
                 public void onClick(View v) {
                     mAuth.signOut();
 
+
+
                     startActivity(new Intent(Home.this, Login.class));
                     Toast.makeText(Home.this, "Log out successful", Toast.LENGTH_SHORT).show();
 
