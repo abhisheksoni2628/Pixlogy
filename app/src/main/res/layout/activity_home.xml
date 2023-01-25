@@ -323,7 +323,31 @@
             android:textColor="@color/black"
             android:textSize="10dp" />
 
+
+
+
+
+
     </RelativeLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/signout"
+                android:layout_width="374dp"
+                android:layout_height="55dp"
+
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/theme2"
+                android:text="sign out"
+                android:textColor="@color/white"
+                app:cornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.189"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.968"
+                tools:ignore="TextContrastCheck" />
+
         </LinearLayout>
 
     </ScrollView>
