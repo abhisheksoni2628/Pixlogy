@@ -41,6 +41,7 @@ public class Login extends AppCompatActivity {
 
     TextView signup;
     Button loginBtn;
+    Button phone;
     Button LoginWithGoogle;
 
     @Override
@@ -56,11 +57,19 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         Email = findViewById(R.id.et_email);
         password = findViewById(R.id.et_password);
+        phone = findViewById(R.id.loginWithPhone);
         LoginWithGoogle = findViewById(R.id.loginWithGoogle);
 
 
         signup = findViewById(R.id.newUserSignup);
         loginBtn = findViewById(R.id.loginBtn);
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Login.this,phoneNum.class);
+                startActivity(i);
+            }
+        });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
