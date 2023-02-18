@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,9 @@ import com.pixlogy.pixlogy.auth.Login;
 public class Home extends AppCompatActivity {
     Button Signout;
     FirebaseAuth mAuth;
+
+    RelativeLayout imgStegnographyBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,21 @@ public class Home extends AppCompatActivity {
 
                 }
             });
+
+
        }
+
+        imgStegnographyBtn = findViewById(R.id.imgStegnographyBtn);
+        imgStegnographyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, ImageStegnography.class));
+            }
+        });
+
+
+
+
+
         }
     }
