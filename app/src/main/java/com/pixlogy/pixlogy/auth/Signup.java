@@ -44,6 +44,7 @@ public class Signup extends AppCompatActivity {
     EditText password;
     EditText confirmPassword;
     Button signUpBtn;
+    Button SignupWithphone;
     Button googleSignin;
     FirebaseAuth mAuth;
     @Override
@@ -58,6 +59,15 @@ public class Signup extends AppCompatActivity {
        password = findViewById(R.id.et_password);
        googleSignin = findViewById(R.id.signupWithGoogle);
        confirmPassword = findViewById(R.id.et_confirmPassword);
+       SignupWithphone = findViewById(R.id.signupWithPhone);
+       SignupWithphone.setOnClickListener(new OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent i = new Intent(Signup.this,phoneNum.class);
+               startActivity(i);
+           }
+       });
+
 
          loginText = findViewById(R.id.login);
          signUpBtn = findViewById(R.id.signUpBtn);
