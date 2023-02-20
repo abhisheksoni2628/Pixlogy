@@ -1,8 +1,10 @@
 package com.pixlogy.pixlogy;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -10,14 +12,21 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.pixlogy.pixlogy.auth.Login;
 
 public class Home extends AppCompatActivity {
     Button Signout;
     FirebaseAuth mAuth;
+    private GoogleSignInClient mGoogleSignInClient;
 
     RelativeLayout imgStegnographyBtn;
 
@@ -37,6 +46,9 @@ public class Home extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     mAuth.signOut();
+
+                    requestgooglesignout();
+
 
 
 
@@ -62,4 +74,19 @@ public class Home extends AppCompatActivity {
 
 
         }
+
+    private void requestgooglesignout() {
+        GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN);
+        googleSignInClient.revokeAccess().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    // User has been signed out and access revoked
+                    // Clear any user data stored in your app
+                }
+            }
+        });
+
+
     }
+}
