@@ -28,7 +28,7 @@ public class Home extends AppCompatActivity {
     FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
 
-    RelativeLayout imgStegnographyBtn;
+    RelativeLayout imgStegnographyBtn, imgCompressorBtn;
 
 
     @Override
@@ -66,6 +66,14 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this, ImageStegnography.class));
+            }
+        });
+
+        imgCompressorBtn = findViewById(R.id.imageCompressorBtn);
+        imgCompressorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, ImgCompressor.class));
             }
         });
 

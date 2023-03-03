@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.pixlogy.pixlogy.auth.Login;
 import com.pixlogy.pixlogy.auth.Signup;
 
 public class MainActivity extends AppCompatActivity {

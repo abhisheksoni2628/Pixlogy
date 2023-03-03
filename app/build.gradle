@@ -68,7 +68,11 @@ dependencies {
     //Image stegnography dependency
     implementation 'com.github.aagarwal1012:Image-Steganography-Library-Android:v1.0'
 
+    //dexter Library
+    implementation 'com.karumi:dexter:6.2.3'
 
+    //compress dependency
+    implementation 'id.zelory:compressor:2.1.1'
 
 
 }

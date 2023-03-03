@@ -60,7 +60,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/theme">
+            app:startIconTint="@color/theme"
+            app:startIconScaleType="centerInside"
+            app:endIconScaleType="centerInside">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
@@ -95,7 +97,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:startIconDrawable="@drawable/ic_lock"
-            app:startIconTint="@color/theme">
+            app:startIconTint="@color/theme"
+            app:startIconScaleType="centerInside"
+            app:endIconScaleType="centerInside">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
@@ -159,6 +163,7 @@
             app:backgroundTint="@color/theme2"
             app:icon="@drawable/login_btn_arrow"
             app:iconSize="35dp"
+            android:paddingHorizontal="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="@+id/linearLayout2"
@@ -170,15 +175,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:fontFamily="@font/doppio_one"
+        android:layout_marginTop="38dp"
         android:text="----------------- or continue with -----------------"
         android:textAlignment="center"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
@@ -194,7 +199,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginWithPhone"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:backgroundTint="@color/white"
@@ -204,12 +209,17 @@
             android:textSize="10dp"
             app:icon="@drawable/phone_login"
             app:iconTint="@color/theme"
-            tools:ignore="TextSizeCheck" />
+            android:textAlignment="textStart"
+            android:gravity="center"
+            app:cornerRadius="3dp"
+            app:iconSize="14dp"
+            android:paddingStart="5dp"
+            tools:ignore="RtlCompat,TextSizeCheck" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginWithGoogle"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:backgroundTint="@color/white"
@@ -218,9 +228,13 @@
             android:textColor="@color/theme"
             android:textSize="10dp"
             app:icon="@drawable/icons8_google"
-            app:iconSize="24dp"
             app:iconTint="@color/theme"
-            tools:ignore="TextSizeCheck" />
+            android:textAlignment="textStart"
+            android:gravity="center"
+            app:cornerRadius="3dp"
+            app:iconSize="14dp"
+            android:paddingStart="5dp"
+            tools:ignore="RtlCompat,TextSizeCheck" />
 
     </RelativeLayout>
 
