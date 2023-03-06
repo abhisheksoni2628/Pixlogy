@@ -12,9 +12,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -51,6 +53,10 @@ public class phoneNum extends AppCompatActivity {
             phonenumber = findViewById(R.id.et_phone);
             progressBar = findViewById(R.id.progressbar);
             mAuth = FirebaseAuth.getInstance();
+
+
+            ImageView gifImageView = findViewById(R.id.gifImageView);
+            Glide.with(this).load(R.drawable.otpanim).into(gifImageView);
 
             Phone.setOnClickListener(new View.OnClickListener() {
                 @Override
