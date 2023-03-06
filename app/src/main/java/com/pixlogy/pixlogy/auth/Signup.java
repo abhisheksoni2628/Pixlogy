@@ -156,10 +156,13 @@ public class Signup extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(Signup.this, "SignUp Successfull", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(Signup.this, Login.class);
-                        startActivity(intent);
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        sendEmailVerification(user);
+//                        Toast.makeText(Signup.this, "SignUp Successfull", Toast.LENGTH_SHORT).show();
+//
+//                        Intent intent = new Intent(Signup.this, Login.class);
+//                        startActivity(intent);
 
 
 
@@ -170,6 +173,27 @@ public class Signup extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void sendEmailVerification(FirebaseUser user) {
+        user.sendEmailVerification()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        // The verification email was sent successfully
+                        Toast.makeText(Signup.this, "Verification email sent", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // There was an error sending the verification email
+                        Toast.makeText(Signup.this, "Failed to send verification email", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        mAuth.addAuthStateListener(firebaseAuth -> {
+            FirebaseUser updatedUser = firebaseAuth.getCurrentUser();
+            if (updatedUser != null && updatedUser.isEmailVerified()) {
+                // The user's email has been verified, so you can redirect them to the main activity
+            }
+        });
+
     }
 
 
